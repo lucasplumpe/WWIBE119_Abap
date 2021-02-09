@@ -43,7 +43,7 @@ CLASS zcl_119005_exercise_0102 IMPLEMENTATION.
    result = ipow( base = 5 exp = 3 ). out->write(  |Potenz: | && result ).
 
 
-
+   result = nmin( val1 = 3 val2 = 6 ). out->write(  |Minimum: | && result ).
 
   ENDMETHOD.
 ENDCLASS.
