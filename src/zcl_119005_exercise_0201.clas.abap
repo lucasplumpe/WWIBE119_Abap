@@ -21,7 +21,10 @@ CLASS zcl_119005_exercise_0201 IMPLEMENTATION.
 
   travel = CORRESPONDING #( ZCL_119000_Flight=>get_latest_travel( ) ).
 
-  out->write( |Travelid: { travel-travel_id } Description { travel-description } Begin_date: {  travel-begin_date } End_date: { travel-end_date }| ).
+  out->write( |TravelId: { travel-travel_id }| ).
+  out->write( |Beschreibung: { travel-description }| ).
+  out->write( |Startdatum: { travel-begin_date }| ).
+  out->write( |Enddatum: { travel-end_date }| ).
 
   ENDMETHOD.
 ENDCLASS.
