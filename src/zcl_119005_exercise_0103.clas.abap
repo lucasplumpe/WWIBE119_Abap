@@ -18,7 +18,7 @@ CLASS zcl_119005_exercise_0103 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
     data string1 type string value 'Haallo Welt'.
-    out->write( |Original: | && string1 ).
+    out->write( |Original: | && string1 ). "Hallo Lucky
     string1 = replace( val = string1 sub = 'a' with = '1' ).
     string1 = replace( val = string1 sub = 'e' with = '2' ).
     string1 = replace( val = string1 sub = 'i' with = '3' ).
