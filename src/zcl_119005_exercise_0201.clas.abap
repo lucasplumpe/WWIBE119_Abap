@@ -17,6 +17,7 @@ CLASS zcl_119005_exercise_0201 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+
   Data travel type Z119005_Travel.
 
   travel = CORRESPONDING #( ZCL_119000_Flight=>get_latest_travel( ) ).
