@@ -11,19 +11,20 @@ define view entity ZI_119005_Travel_xt
   as select from ZI_119005_Travel
 {
   key TravelId,
-      Description,
+      AgencyId,
       CustomerId,
       BeginDate,
       EndDate,
-      cast(TotalPrice as abap.fltp) - cast(BookingFee as abap.fltp) as Price, 
-      BookingFee,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      cast(cast(TotalPrice as abap.dec(16,2)) - cast(BookingFee as abap.dec(16,2)) as abap.curr(16,2)) as Price,
       TotalPrice,
+      BookingFee,
       CurrencyCode,
-      case
-              when Status = 'B' then 'Booked'
-              when Status = 'N' then 'New'
-              when Status = 'P' then 'Planned'
-              else 'Undefined'
-          end as status
-
+      Description,
+      case Status
+        when 'B' then 'Booked'
+        when 'N' then 'New'
+        when 'P' then 'Planned'
+        else ''
+      end                                                                                              as Status
 }
